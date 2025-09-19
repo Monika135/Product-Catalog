@@ -1,0 +1,66 @@
+E-Commerce API
+🚀 Features
+👨‍💻 Admin
+
+✅ Create categories & subcategories
+
+✅ Add products with details (price, description, images)
+
+✅ Add product variants (sizes, colors, etc.)
+
+✅ Manage inventory (stock updates when orders are placed)
+
+🛍️ Customer
+
+🔎 Browse categories
+
+🔎 Search & filter products
+
+🛒 Add items to cart, update or remove them
+
+📦 Place orders from cart
+
+📉 System auto-deducts stock from inventory
+
+📌 API Endpoints
+🩺 Health & Auth
+Method	Endpoint	Description
+GET	/health_check/	API health check
+POST	/user/signup/	User signup (customer)
+POST	/admin/signup/	Admin signup
+POST	/login/	Login (admin/customer)
+
+
+👨‍💻 Admin Routes
+Method	Endpoint	Description
+POST	/admin/category/	Create category/subcategory
+POST	/admin/products/	Add new product
+POST	/admin/variant/	Add product variant
+
+
+🛍️ Customer Routes
+Method	Endpoint	Description
+GET	/categories/	Browse categories
+GET	/products/list/	List products (supports search & filter)
+POST	/cart/	Add product variant to cart
+PUT	/cart/<item_id>/	Update quantity in cart
+DELETE	/cart/<item_id>/	Remove item from cart
+POST	/orders/	Place an order from cart
+
+
+🔄 Example Requests
+POST - /login/
+{
+  "email": "marykom2@gmail.com",
+  "password": "Mary1234#"
+}
+
+🛒 Add Product to Cart (Customer)
+
+POST /cart/
+
+{
+  "variant_id": "variant-uuid",
+  "quantity": 2
+}
+
